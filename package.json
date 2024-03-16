@@ -1,9 +1,9 @@
 {
-  "name": "awscdk-construct-lambda-function-for-inserting-scte",
+  "name": "awscdk-construct-scte-scheduler",
   "description": "AWS CDK Construct for scheduling SCTE-35 events using the MediaLive schedule API",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kuu/awscdk-construct-lambda-function-for-inserting-scte.git"
+    "url": "https://github.com/kuu/awscdk-construct-scte-scheduler.git"
   },
   "scripts": {
     "build": "npx projen build",

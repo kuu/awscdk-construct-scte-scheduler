@@ -5,9 +5,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   cdkVersion: '2.132.0',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.3.0',
-  name: 'awscdk-construct-lambda-function-for-inserting-scte',
+  name: 'awscdk-construct-scte-scheduler',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/kuu/awscdk-construct-lambda-function-for-inserting-scte.git',
+  repositoryUrl: 'https://github.com/kuu/awscdk-construct-scte-scheduler.git',
   keywords: [
     'cdk',
     'cdk-construct',
