@@ -2,39 +2,39 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### EventBridgeSchedule <a name="EventBridgeSchedule" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule"></a>
+### EventBridgeSchedule <a name="EventBridgeSchedule" id="awscdk-construct-scte-scheduler.EventBridgeSchedule"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-construct-scte-scheduler.EventBridgeSchedule.Initializer"></a>
 
 ```typescript
-import { EventBridgeSchedule } from 'awscdk-construct-lambda-function-for-inserting-scte'
+import { EventBridgeSchedule } from 'awscdk-construct-scte-scheduler'
 
 new EventBridgeSchedule(scope: Construct, id: string, props: EventBridgeScheduleProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeScheduleProps">EventBridgeScheduleProps</a></code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-construct-scte-scheduler.EventBridgeScheduleProps">EventBridgeScheduleProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-construct-scte-scheduler.EventBridgeSchedule.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-construct-scte-scheduler.EventBridgeSchedule.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-construct-scte-scheduler.EventBridgeSchedule.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeScheduleProps">EventBridgeScheduleProps</a>
+- *Type:* <a href="#awscdk-construct-scte-scheduler.EventBridgeScheduleProps">EventBridgeScheduleProps</a>
 
 ---
 
@@ -42,11 +42,11 @@ new EventBridgeSchedule(scope: Construct, id: string, props: EventBridgeSchedule
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.toString"></a>
+##### `toString` <a name="toString" id="awscdk-construct-scte-scheduler.EventBridgeSchedule.toString"></a>
 
 ```typescript
 public toString(): string
@@ -58,14 +58,14 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-construct-scte-scheduler.EventBridgeSchedule.isConstruct"></a>
 
 ```typescript
-import { EventBridgeSchedule } from 'awscdk-construct-lambda-function-for-inserting-scte'
+import { EventBridgeSchedule } from 'awscdk-construct-scte-scheduler'
 
 EventBridgeSchedule.isConstruct(x: any)
 ```
@@ -86,7 +86,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-construct-scte-scheduler.EventBridgeSchedule.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -98,12 +98,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.property.rule">rule</a></code> | <code>aws-cdk-lib.aws_events.Rule</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule.property.rule">rule</a></code> | <code>aws-cdk-lib.aws_events.Rule</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-construct-scte-scheduler.EventBridgeSchedule.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -115,7 +115,7 @@ The tree node.
 
 ---
 
-##### `rule`<sup>Required</sup> <a name="rule" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule.property.rule"></a>
+##### `rule`<sup>Required</sup> <a name="rule" id="awscdk-construct-scte-scheduler.EventBridgeSchedule.property.rule"></a>
 
 ```typescript
 public readonly rule: Rule;
@@ -126,39 +126,39 @@ public readonly rule: Rule;
 ---
 
 
-### Lambda <a name="Lambda" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda"></a>
+### Lambda <a name="Lambda" id="awscdk-construct-scte-scheduler.Lambda"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-construct-scte-scheduler.Lambda.Initializer"></a>
 
 ```typescript
-import { Lambda } from 'awscdk-construct-lambda-function-for-inserting-scte'
+import { Lambda } from 'awscdk-construct-scte-scheduler'
 
 new Lambda(scope: Construct, id: string, props: LambdaProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.Lambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.Lambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.Lambda.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.LambdaProps">LambdaProps</a></code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.Lambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.Lambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.Lambda.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-construct-scte-scheduler.LambdaProps">LambdaProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-construct-scte-scheduler.Lambda.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-construct-scte-scheduler.Lambda.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-construct-scte-scheduler.Lambda.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#awscdk-construct-lambda-function-for-inserting-scte.LambdaProps">LambdaProps</a>
+- *Type:* <a href="#awscdk-construct-scte-scheduler.LambdaProps">LambdaProps</a>
 
 ---
 
@@ -166,11 +166,11 @@ new Lambda(scope: Construct, id: string, props: LambdaProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.Lambda.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-construct-scte-scheduler.Lambda.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda.toString"></a>
+##### `toString` <a name="toString" id="awscdk-construct-scte-scheduler.Lambda.toString"></a>
 
 ```typescript
 public toString(): string
@@ -182,14 +182,14 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.Lambda.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-construct-scte-scheduler.Lambda.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-construct-scte-scheduler.Lambda.isConstruct"></a>
 
 ```typescript
-import { Lambda } from 'awscdk-construct-lambda-function-for-inserting-scte'
+import { Lambda } from 'awscdk-construct-scte-scheduler'
 
 Lambda.isConstruct(x: any)
 ```
@@ -210,7 +210,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-construct-scte-scheduler.Lambda.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -222,12 +222,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.Lambda.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.Lambda.property.func">func</a></code> | <code>aws-cdk-lib.aws_lambda_nodejs.NodejsFunction</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.Lambda.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-construct-scte-scheduler.Lambda.property.func">func</a></code> | <code>aws-cdk-lib.aws_lambda_nodejs.NodejsFunction</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-construct-scte-scheduler.Lambda.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -239,7 +239,7 @@ The tree node.
 
 ---
 
-##### `func`<sup>Required</sup> <a name="func" id="awscdk-construct-lambda-function-for-inserting-scte.Lambda.property.func"></a>
+##### `func`<sup>Required</sup> <a name="func" id="awscdk-construct-scte-scheduler.Lambda.property.func"></a>
 
 ```typescript
 public readonly func: NodejsFunction;
@@ -250,39 +250,39 @@ public readonly func: NodejsFunction;
 ---
 
 
-### ScteScheduler <a name="ScteScheduler" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler"></a>
+### ScteScheduler <a name="ScteScheduler" id="awscdk-construct-scte-scheduler.ScteScheduler"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-construct-scte-scheduler.ScteScheduler.Initializer"></a>
 
 ```typescript
-import { ScteScheduler } from 'awscdk-construct-lambda-function-for-inserting-scte'
+import { ScteScheduler } from 'awscdk-construct-scte-scheduler'
 
 new ScteScheduler(scope: Construct, id: string, props: ScteSchedulerProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps">ScteSchedulerProps</a></code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps">ScteSchedulerProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-construct-scte-scheduler.ScteScheduler.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-construct-scte-scheduler.ScteScheduler.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-construct-scte-scheduler.ScteScheduler.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps">ScteSchedulerProps</a>
+- *Type:* <a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps">ScteSchedulerProps</a>
 
 ---
 
@@ -290,11 +290,11 @@ new ScteScheduler(scope: Construct, id: string, props: ScteSchedulerProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.toString"></a>
+##### `toString` <a name="toString" id="awscdk-construct-scte-scheduler.ScteScheduler.toString"></a>
 
 ```typescript
 public toString(): string
@@ -306,14 +306,14 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-construct-scte-scheduler.ScteScheduler.isConstruct"></a>
 
 ```typescript
-import { ScteScheduler } from 'awscdk-construct-lambda-function-for-inserting-scte'
+import { ScteScheduler } from 'awscdk-construct-scte-scheduler'
 
 ScteScheduler.isConstruct(x: any)
 ```
@@ -334,7 +334,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-construct-scte-scheduler.ScteScheduler.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -346,13 +346,13 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.property.lambda">lambda</a></code> | <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.Lambda">Lambda</a></code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.property.schedule">schedule</a></code> | <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule">EventBridgeSchedule</a></code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.lambda">lambda</a></code> | <code><a href="#awscdk-construct-scte-scheduler.Lambda">Lambda</a></code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.schedule">schedule</a></code> | <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a></code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-construct-scte-scheduler.ScteScheduler.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -364,35 +364,35 @@ The tree node.
 
 ---
 
-##### `lambda`<sup>Required</sup> <a name="lambda" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.property.lambda"></a>
+##### `lambda`<sup>Required</sup> <a name="lambda" id="awscdk-construct-scte-scheduler.ScteScheduler.property.lambda"></a>
 
 ```typescript
 public readonly lambda: Lambda;
 ```
 
-- *Type:* <a href="#awscdk-construct-lambda-function-for-inserting-scte.Lambda">Lambda</a>
+- *Type:* <a href="#awscdk-construct-scte-scheduler.Lambda">Lambda</a>
 
 ---
 
-##### `schedule`<sup>Required</sup> <a name="schedule" id="awscdk-construct-lambda-function-for-inserting-scte.ScteScheduler.property.schedule"></a>
+##### `schedule`<sup>Required</sup> <a name="schedule" id="awscdk-construct-scte-scheduler.ScteScheduler.property.schedule"></a>
 
 ```typescript
 public readonly schedule: EventBridgeSchedule;
 ```
 
-- *Type:* <a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeSchedule">EventBridgeSchedule</a>
+- *Type:* <a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a>
 
 ---
 
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### EventBridgeScheduleProps <a name="EventBridgeScheduleProps" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeScheduleProps"></a>
+### EventBridgeScheduleProps <a name="EventBridgeScheduleProps" id="awscdk-construct-scte-scheduler.EventBridgeScheduleProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeScheduleProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-construct-scte-scheduler.EventBridgeScheduleProps.Initializer"></a>
 
 ```typescript
-import { EventBridgeScheduleProps } from 'awscdk-construct-lambda-function-for-inserting-scte'
+import { EventBridgeScheduleProps } from 'awscdk-construct-scte-scheduler'
 
 const eventBridgeScheduleProps: EventBridgeScheduleProps = { ... }
 ```
@@ -401,12 +401,12 @@ const eventBridgeScheduleProps: EventBridgeScheduleProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeScheduleProps.property.func">func</a></code> | <code>aws-cdk-lib.aws_lambda_nodejs.NodejsFunction</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.EventBridgeScheduleProps.property.intervalInMinutes">intervalInMinutes</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.func">func</a></code> | <code>aws-cdk-lib.aws_lambda_nodejs.NodejsFunction</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.intervalInMinutes">intervalInMinutes</a></code> | <code>number</code> | *No description.* |
 
 ---
 
-##### `func`<sup>Required</sup> <a name="func" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeScheduleProps.property.func"></a>
+##### `func`<sup>Required</sup> <a name="func" id="awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.func"></a>
 
 ```typescript
 public readonly func: NodejsFunction;
@@ -416,7 +416,7 @@ public readonly func: NodejsFunction;
 
 ---
 
-##### `intervalInMinutes`<sup>Required</sup> <a name="intervalInMinutes" id="awscdk-construct-lambda-function-for-inserting-scte.EventBridgeScheduleProps.property.intervalInMinutes"></a>
+##### `intervalInMinutes`<sup>Required</sup> <a name="intervalInMinutes" id="awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.intervalInMinutes"></a>
 
 ```typescript
 public readonly intervalInMinutes: number;
@@ -426,12 +426,12 @@ public readonly intervalInMinutes: number;
 
 ---
 
-### LambdaProps <a name="LambdaProps" id="awscdk-construct-lambda-function-for-inserting-scte.LambdaProps"></a>
+### LambdaProps <a name="LambdaProps" id="awscdk-construct-scte-scheduler.LambdaProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-construct-lambda-function-for-inserting-scte.LambdaProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-construct-scte-scheduler.LambdaProps.Initializer"></a>
 
 ```typescript
-import { LambdaProps } from 'awscdk-construct-lambda-function-for-inserting-scte'
+import { LambdaProps } from 'awscdk-construct-scte-scheduler'
 
 const lambdaProps: LambdaProps = { ... }
 ```
@@ -440,12 +440,12 @@ const lambdaProps: LambdaProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.LambdaProps.property.channelId">channelId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.LambdaProps.property.scteDurationInSeconds">scteDurationInSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.LambdaProps.property.channelId">channelId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.LambdaProps.property.scteDurationInSeconds">scteDurationInSeconds</a></code> | <code>number</code> | *No description.* |
 
 ---
 
-##### `channelId`<sup>Required</sup> <a name="channelId" id="awscdk-construct-lambda-function-for-inserting-scte.LambdaProps.property.channelId"></a>
+##### `channelId`<sup>Required</sup> <a name="channelId" id="awscdk-construct-scte-scheduler.LambdaProps.property.channelId"></a>
 
 ```typescript
 public readonly channelId: string;
@@ -455,7 +455,7 @@ public readonly channelId: string;
 
 ---
 
-##### `scteDurationInSeconds`<sup>Required</sup> <a name="scteDurationInSeconds" id="awscdk-construct-lambda-function-for-inserting-scte.LambdaProps.property.scteDurationInSeconds"></a>
+##### `scteDurationInSeconds`<sup>Required</sup> <a name="scteDurationInSeconds" id="awscdk-construct-scte-scheduler.LambdaProps.property.scteDurationInSeconds"></a>
 
 ```typescript
 public readonly scteDurationInSeconds: number;
@@ -465,12 +465,12 @@ public readonly scteDurationInSeconds: number;
 
 ---
 
-### ScteSchedulerProps <a name="ScteSchedulerProps" id="awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps"></a>
+### ScteSchedulerProps <a name="ScteSchedulerProps" id="awscdk-construct-scte-scheduler.ScteSchedulerProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-construct-scte-scheduler.ScteSchedulerProps.Initializer"></a>
 
 ```typescript
-import { ScteSchedulerProps } from 'awscdk-construct-lambda-function-for-inserting-scte'
+import { ScteSchedulerProps } from 'awscdk-construct-scte-scheduler'
 
 const scteSchedulerProps: ScteSchedulerProps = { ... }
 ```
@@ -479,13 +479,13 @@ const scteSchedulerProps: ScteSchedulerProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps.property.channelId">channelId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps.property.intervalInMinutes">intervalInMinutes</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps.property.scteDurationInSeconds">scteDurationInSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.channelId">channelId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.intervalInMinutes">intervalInMinutes</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.scteDurationInSeconds">scteDurationInSeconds</a></code> | <code>number</code> | *No description.* |
 
 ---
 
-##### `channelId`<sup>Required</sup> <a name="channelId" id="awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps.property.channelId"></a>
+##### `channelId`<sup>Required</sup> <a name="channelId" id="awscdk-construct-scte-scheduler.ScteSchedulerProps.property.channelId"></a>
 
 ```typescript
 public readonly channelId: string;
@@ -495,7 +495,7 @@ public readonly channelId: string;
 
 ---
 
-##### `intervalInMinutes`<sup>Required</sup> <a name="intervalInMinutes" id="awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps.property.intervalInMinutes"></a>
+##### `intervalInMinutes`<sup>Required</sup> <a name="intervalInMinutes" id="awscdk-construct-scte-scheduler.ScteSchedulerProps.property.intervalInMinutes"></a>
 
 ```typescript
 public readonly intervalInMinutes: number;
@@ -505,7 +505,7 @@ public readonly intervalInMinutes: number;
 
 ---
 
-##### `scteDurationInSeconds`<sup>Required</sup> <a name="scteDurationInSeconds" id="awscdk-construct-lambda-function-for-inserting-scte.ScteSchedulerProps.property.scteDurationInSeconds"></a>
+##### `scteDurationInSeconds`<sup>Required</sup> <a name="scteDurationInSeconds" id="awscdk-construct-scte-scheduler.ScteSchedulerProps.property.scteDurationInSeconds"></a>
 
 ```typescript
 public readonly scteDurationInSeconds: number;
