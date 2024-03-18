@@ -61,8 +61,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-medialive": "^3.535.0",
-    "aws-cdk-lib": "^2.1.0",
-    "constructs": "^10.0.5"
+    "aws-cdk-lib": "^2.133.0",
+    "constructs": "^10.3.0"
   },
   "bundledDependencies": [
     "@aws-sdk/client-medialive"
