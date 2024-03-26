@@ -1,3 +1,4 @@
+import * as fs from 'fs';
 import * as path from 'path';
 import { Duration, aws_logs as logs } from 'aws-cdk-lib';
 import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
@@ -18,9 +19,12 @@ export class Lambda extends Construct {
 
     const { channelId, scteDurationInSeconds } = props;
 
+    const TS_ENTRY = path.resolve(__dirname, 'code', 'index.ts');
+    const JS_ENTRY = path.resolve(__dirname, 'code', 'index.js');
+
     this.func = new NodejsFunction(scope, 'ScheduleSCTE', {
       runtime: Runtime.NODEJS_18_X,
-      entry: path.resolve(__dirname, 'code', 'index.ts'),
+      entry: fs.existsSync(TS_ENTRY) ? TS_ENTRY : JS_ENTRY,
       // projectRoot: path.resolve(__dirname, '..'),
       // depsLockFilePath: path.resolve(__dirname, '..', 'package-lock.json'),
       handler: 'handler',
