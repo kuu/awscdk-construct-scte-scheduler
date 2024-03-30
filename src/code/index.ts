@@ -5,7 +5,7 @@ import {
   DeleteScheduleCommand,
 } from '@aws-sdk/client-medialive';
 
-const client = new MediaLiveClient({ region: 'ap-northeast-1' });
+const client = new MediaLiveClient({ region: process.env.REGION });
 
 const CHANNEL_ID = process.env.CHANNEL_ID as string;
 const OFFSET = 30;
