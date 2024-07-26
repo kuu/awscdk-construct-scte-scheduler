@@ -12,10 +12,11 @@ const OFFSET = 30;
 const AVAIL_LENGTH = process.env.AVAIL_LENGTH as unknown as number;
 
 // Lambda function to insert SCTE-35 splice_insert() message using the MediaLive schedule API
-export async function handler() {
+export async function handler(event: any) {
   await deleteSchedules();
   const startTime = new Date(Date.now() + (OFFSET * 1000));
   await scheduleEvent(Math.floor(startTime.getTime() / 1000), startTime);
+  return { i: event.i + 1 };
 }
 
 function deleteSchedules() {
