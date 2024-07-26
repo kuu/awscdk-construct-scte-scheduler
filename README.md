@@ -6,9 +6,11 @@ AWS CDK Construct for scheduling SCTE-35 events using the MediaLive schedule API
   * MediaLive channel id
   * SCTE event duration (seconds)
   * Repeat interval (minutes)
+  * Repeat count (optional)
+  * Lambda function to be called after the repeat (optional)
 * Output:
   * Lambda function for calling MediaLive schedule API
-  * EventBridge rule for periodically invoking the function
+  * EventBridge rule or Stepfunctions state machine for periodically invoking the function
 
 ## Install
 [![NPM](https://nodei.co/npm/awscdk-construct-scte-scheduler.png?mini=true)](https://nodei.co/npm/awscdk-construct-scte-scheduler/)
@@ -36,6 +38,7 @@ export class ExampleStack extends Stack {
       channelId: eml.channel.ref,
       scteDurationInSeconds: 30,
       intervalInMinutes: 1,
+      repeqtCount: 5,
     });
 
     // Print MediaPackage endpoint URL (HLS)

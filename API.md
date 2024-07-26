@@ -348,7 +348,7 @@ Any object.
 | --- | --- | --- |
 | <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.lambda">lambda</a></code> | <code><a href="#awscdk-construct-scte-scheduler.Lambda">Lambda</a></code> | *No description.* |
-| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.schedule">schedule</a></code> | <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a></code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.schedule">schedule</a></code> | <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a> \| aws-cdk-lib.aws_stepfunctions.StateMachine</code> | *No description.* |
 
 ---
 
@@ -377,10 +377,10 @@ public readonly lambda: Lambda;
 ##### `schedule`<sup>Required</sup> <a name="schedule" id="awscdk-construct-scte-scheduler.ScteScheduler.property.schedule"></a>
 
 ```typescript
-public readonly schedule: EventBridgeSchedule;
+public readonly schedule: EventBridgeSchedule | StateMachine;
 ```
 
-- *Type:* <a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a>
+- *Type:* <a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a> | aws-cdk-lib.aws_stepfunctions.StateMachine
 
 ---
 
@@ -482,6 +482,8 @@ const scteSchedulerProps: ScteSchedulerProps = { ... }
 | <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.channelId">channelId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.intervalInMinutes">intervalInMinutes</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.scteDurationInSeconds">scteDurationInSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.callback">callback</a></code> | <code>aws-cdk-lib.aws_lambda.IFunction</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.repeatCount">repeatCount</a></code> | <code>number</code> | *No description.* |
 
 ---
 
@@ -509,6 +511,26 @@ public readonly intervalInMinutes: number;
 
 ```typescript
 public readonly scteDurationInSeconds: number;
+```
+
+- *Type:* number
+
+---
+
+##### `callback`<sup>Optional</sup> <a name="callback" id="awscdk-construct-scte-scheduler.ScteSchedulerProps.property.callback"></a>
+
+```typescript
+public readonly callback: IFunction;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.IFunction
+
+---
+
+##### `repeatCount`<sup>Optional</sup> <a name="repeatCount" id="awscdk-construct-scte-scheduler.ScteSchedulerProps.property.repeatCount"></a>
+
+```typescript
+public readonly repeatCount: number;
 ```
 
 - *Type:* number

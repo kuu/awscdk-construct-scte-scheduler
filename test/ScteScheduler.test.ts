@@ -48,3 +48,20 @@ test('Create ScteScheduler', () => {
   template.hasResource('AWS::Lambda::Function', 1);
   template.hasResource('AWS::Events::Rule', 1);
 });
+
+test('Create ScteScheduler 2', () => {
+  const app = new App();
+  const stack = new Stack(app, 'SmokeStack');
+
+  new ScteScheduler(stack, 'ScteScheduler', {
+    channelId: '12345',
+    scteDurationInSeconds: 30,
+    intervalInMinutes: 1,
+    repeatCount: 1,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResource('AWS::Lambda::Function', 1);
+  template.hasResource('AWS::StepFunctions::StateMachine', 1);
+});
