@@ -348,7 +348,7 @@ Any object.
 | --- | --- | --- |
 | <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.lambda">lambda</a></code> | <code><a href="#awscdk-construct-scte-scheduler.Lambda">Lambda</a></code> | *No description.* |
-| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.schedule">schedule</a></code> | <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a> \| aws-cdk-lib.aws_stepfunctions.StateMachine</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteScheduler.property.schedule">schedule</a></code> | <code><a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a></code> | *No description.* |
 
 ---
 
@@ -377,10 +377,10 @@ public readonly lambda: Lambda;
 ##### `schedule`<sup>Required</sup> <a name="schedule" id="awscdk-construct-scte-scheduler.ScteScheduler.property.schedule"></a>
 
 ```typescript
-public readonly schedule: EventBridgeSchedule | StateMachine;
+public readonly schedule: EventBridgeSchedule;
 ```
 
-- *Type:* <a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a> | aws-cdk-lib.aws_stepfunctions.StateMachine
+- *Type:* <a href="#awscdk-construct-scte-scheduler.EventBridgeSchedule">EventBridgeSchedule</a>
 
 ---
 
@@ -401,28 +401,28 @@ const eventBridgeScheduleProps: EventBridgeScheduleProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.func">func</a></code> | <code>aws-cdk-lib.aws_lambda_nodejs.NodejsFunction</code> | *No description.* |
-| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.intervalInMinutes">intervalInMinutes</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.schedule">schedule</a></code> | <code>aws-cdk-lib.aws_events.Schedule</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.target">target</a></code> | <code>aws-cdk-lib.aws_lambda_nodejs.NodejsFunction \| aws-cdk-lib.aws_stepfunctions.StateMachine</code> | *No description.* |
 
 ---
 
-##### `func`<sup>Required</sup> <a name="func" id="awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.func"></a>
+##### `schedule`<sup>Required</sup> <a name="schedule" id="awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.schedule"></a>
 
 ```typescript
-public readonly func: NodejsFunction;
+public readonly schedule: Schedule;
 ```
 
-- *Type:* aws-cdk-lib.aws_lambda_nodejs.NodejsFunction
+- *Type:* aws-cdk-lib.aws_events.Schedule
 
 ---
 
-##### `intervalInMinutes`<sup>Required</sup> <a name="intervalInMinutes" id="awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.intervalInMinutes"></a>
+##### `target`<sup>Required</sup> <a name="target" id="awscdk-construct-scte-scheduler.EventBridgeScheduleProps.property.target"></a>
 
 ```typescript
-public readonly intervalInMinutes: number;
+public readonly target: NodejsFunction | StateMachine;
 ```
 
-- *Type:* number
+- *Type:* aws-cdk-lib.aws_lambda_nodejs.NodejsFunction | aws-cdk-lib.aws_stepfunctions.StateMachine
 
 ---
 
