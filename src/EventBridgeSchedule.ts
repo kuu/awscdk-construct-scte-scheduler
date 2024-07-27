@@ -1,12 +1,12 @@
-import * as cdk from 'aws-cdk-lib';
 import { Rule, Schedule } from 'aws-cdk-lib/aws-events';
-import { LambdaFunction } from 'aws-cdk-lib/aws-events-targets';
+import { LambdaFunction, SfnStateMachine } from 'aws-cdk-lib/aws-events-targets';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
+import { StateMachine } from 'aws-cdk-lib/aws-stepfunctions';
 import { Construct } from 'constructs';
 
 export interface EventBridgeScheduleProps {
-  readonly func: NodejsFunction;
-  readonly intervalInMinutes: number;
+  readonly target: NodejsFunction | StateMachine;
+  readonly schedule: Schedule;
 }
 
 export class EventBridgeSchedule extends Construct {
@@ -15,14 +15,24 @@ export class EventBridgeSchedule extends Construct {
   constructor(scope: Construct, id: string, props: EventBridgeScheduleProps) {
     super(scope, id);
 
-    const { func, intervalInMinutes } = props;
+    const { target, schedule } = props;
 
     this.rule = new Rule(this, 'InvokeFunctionEveryXMinutes', {
-      schedule: Schedule.rate(cdk.Duration.minutes(intervalInMinutes)),
+      schedule,
     });
 
-    this.rule.addTarget(
-      new LambdaFunction(func),
-    );
+    if (isFunction(target)) {
+      this.rule.addTarget(
+        new LambdaFunction(target),
+      );
+    } else {
+      this.rule.addTarget(
+        new SfnStateMachine(target),
+      );
+    }
   }
+}
+
+function isFunction(target: any): target is NodejsFunction {
+  return target instanceof NodejsFunction;
 }

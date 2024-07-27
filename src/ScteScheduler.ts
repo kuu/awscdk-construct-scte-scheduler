@@ -1,4 +1,5 @@
 import { Duration } from 'aws-cdk-lib';
+import { Schedule } from 'aws-cdk-lib/aws-events';
 import { IFunction } from 'aws-cdk-lib/aws-lambda';
 import {
   StateMachine,
@@ -26,7 +27,7 @@ export interface ScteSchedulerProps {
 
 export class ScteScheduler extends Construct {
   public readonly lambda: Lambda;
-  public readonly schedule: EventBridgeSchedule | StateMachine;
+  public readonly schedule: EventBridgeSchedule;
 
   constructor(scope: Construct, id: string, props: ScteSchedulerProps) {
     super(scope, id);
@@ -48,12 +49,12 @@ export class ScteScheduler extends Construct {
     if (repeatCount <= 0) {
       // Create EventBridge rule to invoke the Lambda function every N minutes
       this.schedule = new EventBridgeSchedule(this, 'EventBridgeSchedule', {
-        func: this.lambda.func,
-        intervalInMinutes,
+        target: this.lambda.func,
+        schedule: Schedule.rate(Duration.minutes(intervalInMinutes)),
       });
     } else {
       // Create Step Functions state machine to invoke the Lambda function N times
-      const invoke = new LambdaInvoke(this, 'Invoke with empty object as payload', {
+      const invoke = new LambdaInvoke(this, 'Invoke SCTE scheduler Lambda function', {
         lambdaFunction: this.lambda.func,
         inputPath: '$.Payload',
       });
@@ -63,7 +64,7 @@ export class ScteScheduler extends Construct {
       const lastTask = callback ? new LambdaInvoke(this, 'Callback', {
         lambdaFunction: callback,
       }) : new Succeed(this, 'Done');
-      this.schedule = new StateMachine(this, 'StateMachine', {
+      const stateMachine = new StateMachine(this, 'StateMachine', {
         definitionBody: DefinitionBody.fromChainable(
           Chain.start(
             new Pass(this, 'Start', { parameters: { Payload: { i: 0 } } }),
@@ -80,6 +81,21 @@ export class ScteScheduler extends Construct {
             ),
         ),
       });
+      this.schedule = new EventBridgeSchedule(this, 'EventBridgeSchedule', {
+        target: stateMachine,
+        schedule: cronNow(),
+      });
     }
   }
+}
+
+function cronNow(): Schedule {
+  const now = new Date();
+  return Schedule.cron({
+    year: `${now.getUTCFullYear()}`,
+    month: `${now.getUTCMonth() + 1}`,
+    day: `${now.getUTCDate()}`,
+    hour: `${now.getUTCHours()}`,
+    minute: `${now.getUTCMinutes() + 1}`,
+  });
 }
