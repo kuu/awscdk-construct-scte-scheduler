@@ -58,7 +58,7 @@ export class ScteScheduler extends Construct {
         lambdaFunction: this.lambda.func,
         inputPath: '$.Payload',
       });
-      const wait = new Wait(this, 'Wait', {
+      const wait = new Wait(this, `Wait for ${intervalInMinutes}-min`, {
         time: WaitTime.duration(Duration.minutes(intervalInMinutes)),
       });
       const lastTask = callback ? new LambdaInvoke(this, 'Callback', {
@@ -72,7 +72,7 @@ export class ScteScheduler extends Construct {
             .next(wait)
             .next(invoke)
             .next(
-              new Choice(this, 'Choice')
+              new Choice(this, `Check if repaeted ${repeatCount} times`)
                 .when(
                   Condition.numberLessThan('$.Payload.i', repeatCount),
                   wait,
