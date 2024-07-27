@@ -89,6 +89,8 @@ export class ScteScheduler extends Construct {
   }
 }
 
+const BUFFER_IN_MINUTES = 3;
+
 function cronNow(): Schedule {
   const now = new Date();
   return Schedule.cron({
@@ -96,6 +98,6 @@ function cronNow(): Schedule {
     month: `${now.getUTCMonth() + 1}`,
     day: `${now.getUTCDate()}`,
     hour: `${now.getUTCHours()}`,
-    minute: `${now.getUTCMinutes() + 1}`,
+    minute: `${now.getUTCMinutes() + BUFFER_IN_MINUTES}`,
   });
 }
