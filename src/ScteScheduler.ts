@@ -93,7 +93,6 @@ export class ScteScheduler extends Construct {
             input: '{ Payload: { i: 0 } }',
           },
           physicalResourceId: PhysicalResourceId.of(`${crypto.randomUUID()}`),
-          ignoreErrorCodesMatching: '*',
         },
         //Will ignore any resource and use the assumedRoleArn as resource and 'sts:AssumeRole' for service:action
         policy: AwsCustomResourcePolicy.fromSdkCalls({
