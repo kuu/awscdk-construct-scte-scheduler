@@ -60,8 +60,11 @@ export class ScteScheduler extends Construct {
         lambdaFunction: this.lambda.func,
         inputPath: '$.Payload',
       });
-      const wait = new Wait(this, `Wait for ${intervalInMinutes}-min`, {
+      const wait1 = new Wait(this, `Wait for ${intervalInMinutes}-min`, {
         time: WaitTime.duration(Duration.minutes(intervalInMinutes)),
+      });
+      const wait2 = new Wait(this, `Wait for ${intervalInMinutes * 60 + scteDurationInSeconds}-sec`, {
+        time: WaitTime.duration(Duration.seconds(intervalInMinutes * 60 + scteDurationInSeconds)),
       });
       const lastTask = callback ? new LambdaInvoke(this, 'Callback', {
         lambdaFunction: callback,
@@ -71,15 +74,17 @@ export class ScteScheduler extends Construct {
           Chain.start(
             new Pass(this, 'Start', { parameters: { Payload: { i: 0 } } }),
           )
-            .next(wait)
+            .next(wait1)
             .next(invoke)
             .next(
               new Choice(this, `Check if repaeted ${repeatCount} times`)
                 .when(
                   Condition.numberLessThan('$.Payload.i', repeatCount),
-                  wait,
+                  wait1,
                 )
-                .otherwise(lastTask),
+                .otherwise(
+                  Chain.start(wait2).next(lastTask),
+                ),
             ),
         ),
       });
