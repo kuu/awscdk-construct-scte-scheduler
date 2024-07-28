@@ -374,7 +374,7 @@ public readonly lambda: Lambda;
 
 ---
 
-##### `schedule`<sup>Required</sup> <a name="schedule" id="awscdk-construct-scte-scheduler.ScteScheduler.property.schedule"></a>
+##### `schedule`<sup>Optional</sup> <a name="schedule" id="awscdk-construct-scte-scheduler.ScteScheduler.property.schedule"></a>
 
 ```typescript
 public readonly schedule: EventBridgeSchedule;

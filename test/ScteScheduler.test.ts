@@ -65,5 +65,4 @@ test('Create ScteScheduler 2', () => {
 
   template.hasResource('AWS::Lambda::Function', 1);
   template.hasResource('AWS::StepFunctions::StateMachine', 1);
-  template.hasResource('AWS::Events::Rule', 1);
 });
