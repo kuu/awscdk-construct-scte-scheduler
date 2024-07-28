@@ -1,3 +1,4 @@
+import * as crypto from 'crypto';
 import { Duration } from 'aws-cdk-lib';
 import { Schedule } from 'aws-cdk-lib/aws-events';
 import { IFunction } from 'aws-cdk-lib/aws-lambda';
@@ -13,6 +14,7 @@ import {
   Succeed,
 } from 'aws-cdk-lib/aws-stepfunctions';
 import { LambdaInvoke } from 'aws-cdk-lib/aws-stepfunctions-tasks';
+import { AwsCustomResource, AwsCustomResourcePolicy, PhysicalResourceId } from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
 import { EventBridgeSchedule } from './EventBridgeSchedule';
 import { Lambda } from './Lambda';
@@ -27,7 +29,7 @@ export interface ScteSchedulerProps {
 
 export class ScteScheduler extends Construct {
   public readonly lambda: Lambda;
-  public readonly schedule: EventBridgeSchedule;
+  public readonly schedule?: EventBridgeSchedule;
 
   constructor(scope: Construct, id: string, props: ScteSchedulerProps) {
     super(scope, id);
@@ -81,23 +83,23 @@ export class ScteScheduler extends Construct {
             ),
         ),
       });
-      this.schedule = new EventBridgeSchedule(this, 'EventBridgeSchedule', {
-        target: stateMachine,
-        schedule: cronNow(),
+      // Start the execution of the state machine immediately
+      new AwsCustomResource(scope, 'StartStateMachine', {
+        onCreate: {
+          service: 'StepFunctions',
+          action: 'StartExecution',
+          parameters: {
+            stateMachineArn: stateMachine.stateMachineArn,
+            input: '{ Payload: { i: 0 } }',
+          },
+          physicalResourceId: PhysicalResourceId.of(`${crypto.randomUUID()}`),
+          ignoreErrorCodesMatching: '*',
+        },
+        //Will ignore any resource and use the assumedRoleArn as resource and 'sts:AssumeRole' for service:action
+        policy: AwsCustomResourcePolicy.fromSdkCalls({
+          resources: AwsCustomResourcePolicy.ANY_RESOURCE,
+        }),
       });
     }
   }
-}
-
-const BUFFER_IN_MINUTES = 3;
-
-function cronNow(): Schedule {
-  const now = new Date();
-  return Schedule.cron({
-    year: `${now.getUTCFullYear()}`,
-    month: `${now.getUTCMonth() + 1}`,
-    day: `${now.getUTCDate()}`,
-    hour: `${now.getUTCHours()}`,
-    minute: `${now.getUTCMinutes() + BUFFER_IN_MINUTES}`,
-  });
 }
