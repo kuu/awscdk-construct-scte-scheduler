@@ -90,7 +90,7 @@ export class ScteScheduler extends Construct {
           action: 'StartExecution',
           parameters: {
             stateMachineArn: stateMachine.stateMachineArn,
-            input: '{ Payload: { i: 0 } }',
+            input: '{ "Payload": { "i": 0 } }',
           },
           physicalResourceId: PhysicalResourceId.of(`${crypto.randomUUID()}`),
         },
