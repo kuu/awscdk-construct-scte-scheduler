@@ -47,7 +47,7 @@ test('Create ScteScheduler', () => {
   const template = Template.fromStack(stack);
 
   template.hasResource('AWS::Lambda::Function', 1);
-  template.hasResource('AWS::Events::Rule', 1);
+  template.hasResource('AWS::StepFunctions::StateMachine', 1);
 });
 
 test('Create ScteScheduler 2', () => {
@@ -65,4 +65,23 @@ test('Create ScteScheduler 2', () => {
 
   template.hasResource('AWS::Lambda::Function', 1);
   template.hasResource('AWS::StepFunctions::StateMachine', 1);
+});
+
+test('Create ScteScheduler 3', () => {
+  const app = new App();
+  const stack = new Stack(app, 'SmokeStack');
+
+  new ScteScheduler(stack, 'ScteScheduler', {
+    channelId: '12345',
+    scteDurationInSeconds: 60,
+    cronOptions: { year: '2024', month: '1', day: '1', hour: '1', minute: '1' },
+    intervalInMinutes: 5,
+    repeatCount: 3,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResource('AWS::Lambda::Function', 1);
+  template.hasResource('AWS::StepFunctions::StateMachine', 1);
+  template.hasResource('AWS::Events::Rule', 1);
 });
