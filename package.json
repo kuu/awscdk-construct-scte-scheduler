@@ -39,7 +39,6 @@
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^7",
     "@typescript-eslint/parser": "^7",
-    "commit-and-tag-version": "^12",
     "eslint": "^8",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.29.1",
@@ -51,6 +50,7 @@
     "jsii-pacmak": "^1.103.1",
     "jsii-rosetta": "~5.3.0",
     "projen": "^0.86.6",
+    "standard-version": "^9",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"

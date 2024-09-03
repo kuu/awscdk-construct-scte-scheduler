@@ -1,6 +1,6 @@
 import * as crypto from 'crypto';
 import { Duration } from 'aws-cdk-lib';
-import { Schedule } from 'aws-cdk-lib/aws-events';
+import { Schedule, CronOptions } from 'aws-cdk-lib/aws-events';
 import { IFunction } from 'aws-cdk-lib/aws-lambda';
 import {
   StateMachine,
@@ -23,6 +23,7 @@ export interface ScteSchedulerProps {
   readonly channelId: string;
   readonly scteDurationInSeconds: number;
   readonly intervalInMinutes: number;
+  readonly cronOptions?: CronOptions;
   readonly repeatCount?: number;
   readonly callback?: IFunction;
 }
@@ -38,7 +39,8 @@ export class ScteScheduler extends Construct {
       channelId,
       scteDurationInSeconds,
       intervalInMinutes,
-      repeatCount = 0, // 0 means infinite loop
+      cronOptions,
+      repeatCount = Infinity,
       callback,
     } = props;
 
@@ -48,46 +50,46 @@ export class ScteScheduler extends Construct {
       scteDurationInSeconds,
     });
 
-    if (repeatCount <= 0) {
+    // Create Step Functions state machine to invoke the Lambda function N times
+    const invoke = new LambdaInvoke(this, 'Invoke SCTE scheduler Lambda function', {
+      lambdaFunction: this.lambda.func,
+      inputPath: '$.Payload',
+    });
+    const wait1 = new Wait(this, `Wait for ${intervalInMinutes}-min`, {
+      time: WaitTime.duration(Duration.minutes(intervalInMinutes)),
+    });
+    const wait2 = new Wait(this, `Wait for ${intervalInMinutes * 60 + scteDurationInSeconds}-sec`, {
+      time: WaitTime.duration(Duration.seconds(intervalInMinutes * 60 + scteDurationInSeconds)),
+    });
+    const lastTask = callback ? new LambdaInvoke(this, 'Callback', {
+      lambdaFunction: callback,
+    }) : new Succeed(this, 'Done');
+    const stateMachine = new StateMachine(this, 'StateMachine', {
+      definitionBody: DefinitionBody.fromChainable(
+        Chain.start(
+          new Pass(this, 'Start', { parameters: { Payload: { i: 0 } } }),
+        )
+          .next(wait1)
+          .next(invoke)
+          .next(
+            new Choice(this, `Check if repaeted ${repeatCount} times`)
+              .when(
+                Condition.numberLessThan('$.Payload.i', repeatCount),
+                wait1,
+              )
+              .otherwise(
+                Chain.start(wait2).next(lastTask),
+              ),
+          ),
+      ),
+    });
+    if (cronOptions) {
       // Create EventBridge rule to invoke the Lambda function every N minutes
       this.schedule = new EventBridgeSchedule(this, 'EventBridgeSchedule', {
-        target: this.lambda.func,
-        schedule: Schedule.rate(Duration.minutes(intervalInMinutes)),
+        target: stateMachine,
+        schedule: Schedule.cron(cronOptions),
       });
     } else {
-      // Create Step Functions state machine to invoke the Lambda function N times
-      const invoke = new LambdaInvoke(this, 'Invoke SCTE scheduler Lambda function', {
-        lambdaFunction: this.lambda.func,
-        inputPath: '$.Payload',
-      });
-      const wait1 = new Wait(this, `Wait for ${intervalInMinutes}-min`, {
-        time: WaitTime.duration(Duration.minutes(intervalInMinutes)),
-      });
-      const wait2 = new Wait(this, `Wait for ${intervalInMinutes * 60 + scteDurationInSeconds}-sec`, {
-        time: WaitTime.duration(Duration.seconds(intervalInMinutes * 60 + scteDurationInSeconds)),
-      });
-      const lastTask = callback ? new LambdaInvoke(this, 'Callback', {
-        lambdaFunction: callback,
-      }) : new Succeed(this, 'Done');
-      const stateMachine = new StateMachine(this, 'StateMachine', {
-        definitionBody: DefinitionBody.fromChainable(
-          Chain.start(
-            new Pass(this, 'Start', { parameters: { Payload: { i: 0 } } }),
-          )
-            .next(wait1)
-            .next(invoke)
-            .next(
-              new Choice(this, `Check if repaeted ${repeatCount} times`)
-                .when(
-                  Condition.numberLessThan('$.Payload.i', repeatCount),
-                  wait1,
-                )
-                .otherwise(
-                  Chain.start(wait2).next(lastTask),
-                ),
-            ),
-        ),
-      });
       // Start the execution of the state machine immediately
       new AwsCustomResource(scope, 'StartStateMachine', {
         onCreate: {

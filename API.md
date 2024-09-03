@@ -483,6 +483,7 @@ const scteSchedulerProps: ScteSchedulerProps = { ... }
 | <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.intervalInMinutes">intervalInMinutes</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.scteDurationInSeconds">scteDurationInSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.callback">callback</a></code> | <code>aws-cdk-lib.aws_lambda.IFunction</code> | *No description.* |
+| <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.cronOptions">cronOptions</a></code> | <code>aws-cdk-lib.aws_events.CronOptions</code> | *No description.* |
 | <code><a href="#awscdk-construct-scte-scheduler.ScteSchedulerProps.property.repeatCount">repeatCount</a></code> | <code>number</code> | *No description.* |
 
 ---
@@ -524,6 +525,16 @@ public readonly callback: IFunction;
 ```
 
 - *Type:* aws-cdk-lib.aws_lambda.IFunction
+
+---
+
+##### `cronOptions`<sup>Optional</sup> <a name="cronOptions" id="awscdk-construct-scte-scheduler.ScteSchedulerProps.property.cronOptions"></a>
+
+```typescript
+public readonly cronOptions: CronOptions;
+```
+
+- *Type:* aws-cdk-lib.aws_events.CronOptions
 
 ---
 
