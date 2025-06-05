@@ -2,9 +2,9 @@ import { awscdk } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Kuu Miyazaki',
   authorAddress: 'miyazaqui@gmail.com',
-  cdkVersion: '2.132.0',
+  cdkVersion: '2.200.1',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.3.0',
+  jsiiVersion: '~5.8.9',
   name: 'awscdk-construct-scte-scheduler',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/kuu/awscdk-construct-scte-scheduler.git',
