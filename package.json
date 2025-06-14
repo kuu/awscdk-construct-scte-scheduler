@@ -51,8 +51,8 @@
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.112.0",
     "jsii-rosetta": "~5.8.9",
-    "projen": "^0.92.9",
-    "ts-jest": "^29.3.4",
+    "projen": "^0.92.10",
+    "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
@@ -61,8 +61,8 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@aws-sdk/client-medialive": "^3.826.0",
-    "aws-cdk-lib": "^2.200.1",
+    "@aws-sdk/client-medialive": "^3.828.0",
+    "aws-cdk-lib": "^2.201.0",
     "constructs": "^10.4.2"
   },
   "bundledDependencies": [
