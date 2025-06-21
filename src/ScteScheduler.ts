@@ -40,7 +40,7 @@ export class ScteScheduler extends Construct {
       scteDurationInSeconds,
       intervalInMinutes,
       cronOptions,
-      repeatCount = Infinity,
+      repeatCount = Number.MAX_SAFE_INTEGER,
       callback,
     } = props;
 
